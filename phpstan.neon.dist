@@ -1,0 +1,11 @@
+includes:
+    - vendor/larastan/larastan/extension.neon
+
+parameters:
+    level: 6
+    paths:
+        - src
+        - routes
+        # Fixtures use the package's traits, so they get analysed too.
+        - tests/Fixtures
+    treatPhpDocTypesAsCertain: false

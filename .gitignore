@@ -1,0 +1,8 @@
+/vendor/
+/composer.lock
+/.phpunit.cache/
+.phpunit.result.cache
+/build/
+
+# Documentation is kept locally, not on GitHub.
+/docs

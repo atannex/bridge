@@ -1,0 +1,69 @@
+{
+    "name": "atannex/bridge",
+    "description": "Expose explicitly registered, validated and authorized Laravel operations to JavaScript and TypeScript clients over a small versioned protocol, with generated TypeScript contracts, pluggable authentication, tenant context and standard errors.",
+    "keywords": ["laravel", "api", "typescript", "rpc", "react-native", "expo", "sanctum", "contracts", "codegen"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Atanga Leke Collins",
+            "email": "atangageihlekecollins@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.3",
+        "illuminate/console": "^12.0|^13.0",
+        "illuminate/contracts": "^12.0|^13.0",
+        "illuminate/http": "^12.0|^13.0",
+        "illuminate/pagination": "^12.0|^13.0",
+        "illuminate/routing": "^12.0|^13.0",
+        "illuminate/support": "^12.0|^13.0",
+        "illuminate/validation": "^12.0|^13.0"
+    },
+    "require-dev": {
+        "larastan/larastan": "^3.0",
+        "laravel/fortify": "^1.25",
+        "laravel/pint": "^1.18",
+        "laravel/sanctum": "^4.0",
+        "orchestra/testbench": "^10.0|^11.0",
+        "phpunit/phpunit": "^11.5|^12.0"
+    },
+    "suggest": {
+        "laravel/sanctum": "For SPA session authentication and mobile bearer tokens (^4.0).",
+        "laravel/fortify": "For password login and two-factor authentication; Bridge checks Fortify two-factor codes when issuing mobile tokens (^1.25)."
+    },
+    "autoload": {
+        "psr-4": {
+            "Atannex\\Bridge\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Atannex\\Bridge\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Atannex\\Bridge\\BridgeServiceProvider"
+            ],
+            "aliases": {
+                "Bridge": "Atannex\\Bridge\\Facades\\Bridge"
+            }
+        },
+        "branch-alias": {
+            "dev-main": "1.x-dev"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "bench": "phpunit --group benchmark --testsuite Benchmark",
+        "analyse": "phpstan analyse --memory-limit=1G",
+        "format": "pint"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
